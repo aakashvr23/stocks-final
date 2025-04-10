@@ -1,0 +1,269 @@
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('/images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background: #1f1f1f;
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+  max-width: 400px;
+  width: 100%;
+}
+
+input[type="text"], input[type="password"] {
+  width: 100%;
+  padding: 0.7em;
+  margin: 0.5em 0;
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 0.7em;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff9800;
+  color: white;
+  cursor: pointer;
+}
+
+
+.hidden {
+  display: none;
+}
+.hidden {
+display: none;
+}
+
+
+.container {
+max-width: 900px;
+margin: 40px auto;
+background: rgba(0, 0, 0, 0.7);
+padding: 2em;
+border-radius: 10px;
+box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+}
+
+h1, h2 {
+color: #ffa726;
+text-align: center;
+}
+
+.search-bar {
+display: flex;
+justify-content: center;
+gap: 10px;
+margin-bottom: 20px;
+}
+
+input[type="text"], input[type="number"] {
+padding: 0.5em;
+border-radius: 5px;
+border: none;
+width: 200px;
+}
+
+button {
+padding: 0.6em 1.2em;
+border: none;
+border-radius: 5px;
+background-color: #ff9800;
+color: white;
+font-weight: bold;
+cursor: pointer;
+transition: background 0.3s;
+}
+
+button:hover {
+background-color: #fb8c00;
+}
+
+#stockGraph {
+margin: 20px auto;
+max-width: 800px;
+}
+
+.mf-calculator-icon {
+font-size: 2em;
+text-align: center;
+cursor: pointer;
+margin-top: 20px;
+}
+
+#mfCalculator {
+margin-top: 20px;
+text-align: center;
+}
+
+#mfCalculator input {
+margin: 5px;
+width: 150px;
+}
+
+
+body {
+margin: 0;
+padding: 0;
+background-image: url('https://images.unsplash.com/photo-1565372917232-95f1abccd0cc?auto=format&fit=crop&w=1500&q=80');
+background-size: cover;
+background-position: center;
+font-family: Arial, sans-serif;
+}
+
+input[type="text"], input[type="number"], input[type="email"], input[type="password"] {
+padding: 0.8em;
+font-size: 1em;
+}
+
+iframe {
+display: block;
+margin: 30px auto;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+#chat-container {
+max-width: 600px;
+margin: 30px auto;
+background: rgba(255, 255, 255, 0.1);
+padding: 20px;
+border-radius: 12px;
+box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+color: white;
+}
+
+#chat-box {
+height: 200px;
+overflow-y: auto;
+border: 1px solid #ccc;
+padding: 10px;
+margin-bottom: 10px;
+background: rgba(0, 0, 0, 0.3);
+border-radius: 8px;
+}
+
+#user-input {
+width: 70%;
+padding: 10px;
+border-radius: 6px;
+border: none;
+margin-right: 10px;
+}
+
+#chat-container button {
+padding: 10px 15px;
+background-color: #ff9800;
+border: none;
+border-radius: 6px;
+color: white;
+font-weight: bold;
+cursor: pointer;
+}
+
+#chat-container button:hover {
+background-color: #fb8c00;
+}
+
+.fancy-card {
+background: linear-gradient(145deg, rgba(255, 152, 0, 0.15), rgba(255, 255, 255, 0.05));
+border: 1px solid rgba(255, 255, 255, 0.15);
+padding: 20px;
+border-radius: 12px;
+box-shadow: 0 0 15px rgba(255, 152, 0, 0.3);
+margin-top: 30px;
+text-align: center;
+}
+
+.mf-input-group {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 15px;
+margin: 20px 0;
+}
+
+.mf-input-group input {
+background-color: rgba(255, 255, 255, 0.1);
+border: 1px solid rgba(255, 255, 255, 0.2);
+color: white;
+width: 200px;
+padding: 10px;
+border-radius: 8px;
+font-size: 1em;
+backdrop-filter: blur(3px);
+text-align: center;
+}
+
+.fancy-card button {
+margin-top: 10px;
+padding: 10px 20px;
+background: #ffa726;
+border: none;
+border-radius: 6px;
+font-weight: bold;
+cursor: pointer;
+color: white;
+transition: background 0.3s ease;
+}
+
+.fancy-card button:hover {
+background: #fb8c00;
+}
+.chatbot-container {
+  background: #000000cc;
+  padding: 20px;
+  border-radius: 15px;
+  width: 60%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+#chat-box {
+  background: #111;
+  color: #fff;
+  padding: 15px;
+  height: 200px;
+  overflow-y: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+#user-input {
+  width: 100%;
+  height: 60px;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  resize: none;
+}
+
+.send-button {
+  background-color: orange;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: bold;
+  width: 100%;
+  cursor: pointer;
+}
+.user-msg, .bot-msg {
+  margin: 5px 0;
+}

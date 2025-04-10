@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Stock Viewer & Mutual Fund Calculator</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    canvas { color: white !important; }
+
+    .logout-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 0.8em;
+      padding: 6px 10px;
+      background-color: #ff9800;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    .logout-btn:hover {
+      background-color: #fb8c00;
+    }
+  </style>
+</head>
+<body style="background-image: url('/images/home-bg.jpg'); background-size: cover; background-position: center;">
+
+  <!-- Logout Button -->
+<!-- Logout Button -->
+<a href="/logout" class="logout-btn">Logout</a>
+
+<style>
+  .logout-btn {
+    position: absolute; /* Stick to the top right inside the container */
+    top: 20px;
+    right: 20px;
+    padding: 6px 16px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  }
+
+  .logout-btn:hover {
+    background-color: #fb8c00;
+  }
+</style>
+
+
+
+  <div class="container">
+    <h1>Welcome, <%= username %> 👋</h1>
+    <h2>Stock Search & Graph Viewer</h2>
+
+    <div class="search-bar">
+      <input id="stockSymbol" placeholder="Enter Stock Symbol (e.g., AAPL)" type="text">
+      <button onclick="searchStock()">Search</button>
+    </div>
+
+    <div id="stockGraph"></div>
+
+    <div class="mf-calculator-icon" onclick="toggleCalculator()">📈</div>
+    <div id="mfCalculator" class="fancy-card">
+      <h2 style="color: #ffcc80;">📊 Mutual Fund Calculator</h2>
+      <div class="mf-input-group">
+        <input type="number" id="investment" placeholder="💰 Investment Amount (₹)">
+        <input type="number" id="rate" placeholder="📈 Annual Return Rate (%)">
+        <input type="number" id="years" placeholder="🕒 Investment Duration (Years)">
+      </div>
+      <button onclick="calculateMaturity()">Calculate Maturity</button>
+      <div id="result" style="margin-top: 15px; font-size: 1.1em;"></div>
+    </div>
+
+    <div class="chatbot-container">
+      <h2>Ask the Stock Bot</h2>
+      <div id="chat-box" class="chat-box"></div>
+      <form id="chat-form">
+        <textarea id="user-input" placeholder="Type your message..."></textarea>
+        <button type="submit" class="send-button">Send</button>
+      </form>
+    </div>
+    
+    <script>
+      const chatForm = document.getElementById("chat-form");
+      const userInput = document.getElementById("user-input");
+      const chatBox = document.getElementById("chat-box");
+    
+      chatForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const message = userInput.value.trim();
+        if (!message) return;
+    
+        chatBox.innerHTML += `<div class="user-msg"><strong>You:</strong> ${message}</div>`;
+        userInput.value = "";
+    
+        const res = await fetch("/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message })
+        });
+    
+        const data = await res.json();
+        chatBox.innerHTML += `<div class="bot-msg"><strong>Bot:</strong> ${data.reply}</div>`;
+        chatBox.scrollTop = chatBox.scrollHeight;
+      });
+    </script>
+    
+    
+
+    <!-- 🗺️ Map Section at the Footer -->
+    <div style="width: 100%; margin-top: 20px;">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.6694343953445!2d73.12509517497513!3d18.99020098219674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7e866de88667f%3A0xc1c5d5badc610f5f!2sPillai%20College%20of%20Engineering%2C%20New%20Panvel%20(Autonomous)!5e0!3m2!1sen!2sin!4v1744278106346!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <!-- 📹 Video Help Section -->
+    <div class="video-help" style="margin-top: 30px; padding: 10px; background-color: rgba(255,255,255,0.2); border-radius: 8px;">
+      <h3 style="color: white;">Here is a helpful video about the stock market:</h3>
+      <a href="https://youtu.be/p7HKvqRI_Bo" target="_blank" style="color: #4fc3f7;">📺 Watch Video</a>
+      <p style="margin-top: 10px; color: #ccc;">Developed by: <span id="devName">Last minute finishers</span></p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/js/script.js"></script>
+  <script src="/js/chat.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
